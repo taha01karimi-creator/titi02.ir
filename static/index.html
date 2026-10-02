@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>قفل راز – چت رمزنگاری‌شده</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>🔐 قفل راز</h1>
+  <p class="sub">چت آنلاین دونفره با رمز ۶ رقمی</p>
+
+  <div class="card" id="joinBox">
+    <label>کد اتاق</label>
+    <input id="room" class="code" maxlength="32" placeholder="مثلاً: sirius-42" autocomplete="off">
+    <button class="btn sec" id="gen">🎲 ساخت کد تصادفی</button>
+    <label>رمز ۶ رقمی (هر دو نفر باید یکی بزنید)</label>
+    <input id="pin" class="pin" inputmode="numeric" maxlength="6" placeholder="••••••" autocomplete="off">
+    <button class="btn" id="join">ورود به اتاق</button>
+    <div class="msg" id="msg"></div>
+  </div>
+
+  <div class="card" id="chatBox" hidden>
+    <div class="bar"><span id="status">…</span><button class="tiny" id="leave">خروج</button></div>
+    <div id="log"></div>
+    <div class="send">
+      <input id="text" placeholder="پیامت را بنویس…" autocomplete="off">
+      <button class="btn" id="sendBtn">ارسال</button>
+    </div>
+  </div>
+  <p class="note">پیام‌ها در مرورگر با AES‑256‑GCM قفل می‌شوند؛ سرور فقط متن به‌هم‌ریخته را می‌بیند و چیزی ذخیره نمی‌کند.</p>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
+<script src="/static/script.js"></script>
+</body>
+</html>
